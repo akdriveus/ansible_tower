@@ -1,0 +1,11 @@
+---
+- name: Check services status
+  hosts: all
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: Make sure a service is running
+      systemd:
+        state: started
+        name: sshd
