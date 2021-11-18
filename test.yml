@@ -5,7 +5,7 @@
   become: yes
 
   tasks:
-    - name: Make sure a service is running
+    - name: Make sure that ssh service is running
       systemd:
         state: started
         name: sshd
