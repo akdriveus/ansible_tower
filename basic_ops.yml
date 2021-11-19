@@ -40,8 +40,6 @@
 #       debug:
 #         var: deb_packages
 
-
-
 - name: Make sure that ssh service is running
   hosts: all
 
