@@ -1,7 +1,7 @@
 ---
 - name: Basic operations
   hosts: all
-  gather_facts: false
+  gather_facts: true
   become: yes
 
   tasks:  
