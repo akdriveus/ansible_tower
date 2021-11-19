@@ -9,5 +9,4 @@
       systemd:
         state: started
         name: sshd
-    
-    - name: This is just test
+
