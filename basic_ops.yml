@@ -18,27 +18,29 @@
   hosts: os_RedHat
 
   tasks:
-    - name: Get a list of installed YUM packages      
+    - name: Get a list of installed RPM packages      
       yum:
         list: installed
-      register: yum_packages
+      register: rmp_packages
     
-    - name: List installed YUM packages 
-      debug:
-        var: yum_packages
+    # - name: Print installed RPM packages 
+    #   debug:
+    #     var: rpm_packages
     
-- name: Operations with APT
-  hosts: os_Ubuntu
+# - name: Operations with APT
+#   hosts: os_Ubuntu
 
-  tasks:
-    - name: Get a list of installed APT packaged
-      apt:
-        list: installed
-      register: apt_packages
+#   tasks:
+#     - name: Get a list of installed DEB packages
+#       apt:
+#         state: present
+#       register: deb_packages
     
-    - name: List insstalled APT packages
-      debug:
-        var: apt_packages
+#     - name: Print insstalled DEB packages
+#       debug:
+#         var: deb_packages
+
+
 
 - name: Make sure that ssh service is running
   hosts: all
