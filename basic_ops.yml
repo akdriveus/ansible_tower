@@ -27,18 +27,18 @@
     #   debug:
     #     var: rpm_packages
     
-# - name: Operations with APT
-#   hosts: os_Ubuntu
+- name: Operations with APT
+  hosts: os_Ubuntu
 
-#   tasks:
-#     - name: Get a list of installed DEB packages
-#       apt:
-#         state: present
-#       register: deb_packages
+  tasks:
+    - name: Get a list of installed DEB packages
+      package_facts:
+        manager: apt
+      register: deb_packages
     
-#     - name: Print insstalled DEB packages
-#       debug:
-#         var: deb_packages
+    - name: Print insstalled DEB packages
+      debug:
+        var: deb_packages
 
 - name: Make sure that ssh service is running
   hosts: all
