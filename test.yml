@@ -15,7 +15,6 @@
         var: os_distro
       
     - name: Get a list of installed YUM packages
-      hosts: os_RedHat
       yum:
         list: installed
       register: yum_packages

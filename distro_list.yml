@@ -1,0 +1,15 @@
+---
+- name: Define OS Distro
+  hosts: all
+  gather_facts: false
+  become: yes
+
+  tasks:  
+    - name: Classify hosts depending on their OS distro
+      group_by:
+        key: os_{{ ansible_facts['distribution'] }}
+      register: os_distro
+
+    - name: Display available OS distros
+      debug:
+        var: os_distro
