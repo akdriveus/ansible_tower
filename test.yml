@@ -1,5 +1,5 @@
 ---
-- name: Check services status
+- name: Basic operations
   hosts: all
   gather_facts: false
   become: yes
