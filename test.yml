@@ -10,7 +10,7 @@
         state: started
         name: sshd
     
-    - name: Get a list installed YUM packages
+    - name: Get a list of installed YUM packages
       yum:
         list: installed
       register: yum_packages
