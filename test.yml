@@ -4,17 +4,27 @@
   gather_facts: false
   become: yes
 
-  tasks:
-    - name: Make sure that ssh service is running
-      systemd:
-        state: started
-        name: sshd
+  tasks:  
+    - name: Classify hosts depending on their OS distro
+      group_by:
+        key: os_{{ ansible_facts['distribution'] }}
+      register: os_distro
     
+    - name: List OS distributions
+      debug:
+        var: os_distro
+      
     - name: Get a list of installed YUM packages
+      hosts: os_RedHat
       yum:
         list: installed
       register: yum_packages
     
-    -  name: List installed YUM packages 
-       debug:
-         var: yum_packages
+    - name: List installed YUM packages 
+      debug:
+        var: yum_packages
+
+    - name: Make sure that ssh service is running
+      systemd:
+        state: started
+        name: sshd
