@@ -26,7 +26,24 @@
     - name: List installed YUM packages 
       debug:
         var: yum_packages
+    
+- name: Operations with APT
+  hosts: os_Ubuntu
 
+  tasks:
+    - name: Get a list of installed APT packaged
+      apt:
+        list: installed
+      register: apt_packages
+    
+    - name: List insstalled APT packages
+      debug:
+        var: apt_packages
+
+- name: Make sure that ssh service is running
+  hosts: all
+
+  tasks:
     - name: Make sure that ssh service is running
       systemd:
         state: started
