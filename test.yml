@@ -14,7 +14,11 @@
       debug:
         var: os_distro
       
-    - name: Get a list of installed YUM packages
+- name: Operations with YUM
+  hosts: os_RedHat
+
+  tasks:
+    - name: Get a list of installed YUM packages      
       yum:
         list: installed
       register: yum_packages
