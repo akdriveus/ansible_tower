@@ -9,4 +9,12 @@
       systemd:
         state: started
         name: sshd
-
+    
+    - name: Get a list installed YUM packages
+      yum:
+        list: installed
+      register: yum_packages
+    
+    -  name: List installed YUM packages 
+       debug:
+         var: yum_packages
