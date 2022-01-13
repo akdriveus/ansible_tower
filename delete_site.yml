@@ -1,0 +1,21 @@
+---
+- name: Delete site and stop HTTPD
+  hosts: web
+  tasks:
+
+    - name: httpd stopped and disabled
+      service:
+        name: httpd
+        state: stopped
+        enabled: false
+
+    - name: index.html is deleted
+      file:
+        path: /var/www/html/index.html
+        state: absent
+
+    - name: httpd package is uninstalled
+      yum:
+        name: httpd
+        state: absent
+...
