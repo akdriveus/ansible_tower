@@ -1,3 +1,4 @@
+## This playbook checks installed packages and checks status of sshd service
 
 ---
 
@@ -18,8 +19,8 @@
       
 - name: Operations with YUM
   hosts: os_RedHat
-
   tasks:
+
     - name: Get a list of installed RPM packages      
       yum:
         list: installed
