@@ -1,11 +1,12 @@
+
 ---
 
 - name: Basic operations
   hosts: all
   # gather_facts: false
   become: yes
-
-  tasks:  
+  tasks:
+  
     - name: Classify hosts depending on their OS distro
       group_by:
         key: os_{{ ansible_facts['distribution'] }}
@@ -29,9 +30,9 @@
     #     var: rpm_packages
     
 - name: Operations with APT
-  hosts: os_Ubuntu
-
+  hosts: os_Ubuntu  
   tasks:
+
     - name: Get a list of installed DEB packages
       package_facts:
         manager: apt
@@ -43,8 +44,8 @@
 
 - name: Check services status
   hosts: all
-
   tasks:
+
     - name: Make sure that ssh service is running
       systemd:
         state: started
