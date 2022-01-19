@@ -47,5 +47,5 @@
 
     - name: This is my third task <of my third play>
       debug:
-        msg: This is task 3 of play 3
+        msg: This is task 3 of play 3 - test
 ...
