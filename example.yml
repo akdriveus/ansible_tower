@@ -1,0 +1,51 @@
+
+---
+
+- name: This is the first play
+  hosts: mlrd
+  tasks:
+
+    - name: This is my first task
+      debug:
+        msg: This is task 1 of play 1
+
+    - name: This is my second task
+      debug:
+        msg: This is task 2 of play 1
+
+    - name: This is my third task
+      debug:
+        msg: This is task 3 of play 1
+
+- name: This is the second play
+  hosts: thorvald
+  tasks:
+  
+    - name: This is my first task (of my second play)
+      debug:
+        msg: This is task 1 of play 2
+
+    - name: This is my second task (of my second play)
+      debug:
+        msg: This is task 2 of play 2
+
+    - name: This is my third task (of my second play)
+      debug:
+        msg: This is task 3 of play 2
+
+- name: This is the third play
+  hosts: tower
+  tasks:
+
+    - name: This is my first task <of my third play>
+      debug:
+        msg: This is task 1 of play 3
+
+    - name: This is my second task <of my third play>
+      debug:
+        msg: This is task 2 of play 3
+
+    - name: This is my third task <of my third play>
+      debug:
+        msg: This is task 3 of play 3
+...
