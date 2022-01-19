@@ -1,0 +1,10 @@
+## This playbook will install HTTPD and test connection to the server.
+
+---
+- name: Setup web server
+  hosts: web
+  tasks:
+
+    - name: Install httpd - test
+      yum:
+        name: httpd
