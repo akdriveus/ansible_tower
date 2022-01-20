@@ -1,6 +1,6 @@
+## This is a playbook example.
 
 ---
-
 - name: This is the first play
   hosts: mlrd
   tasks:
