@@ -11,7 +11,7 @@
 
     - name: start httpd
       service:
-        name: htttpd
+        name: httpd
         state: started
         enabled: true
 
