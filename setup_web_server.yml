@@ -8,3 +8,33 @@
     - name: Install httpd
       yum:
         name: httpd
+
+    - name: start httpd
+      service:
+        name: htttpd
+        state: started
+        enabled: true
+
+    - name: Install sample content
+      copy:
+        dest: /var/www/html/index.html
+        content: "Ratamahata\n"
+
+    - name: Create firewall rules
+      firewalld:
+        service: http
+        state: enabled
+        immediate: true
+        permanent: true
+
+- name: Test connectivity to webserver
+  hosts: localhost
+  become: false
+  tasks:
+
+    - name: Connect to webserver
+      uri:
+        url: http://rhel2.bah.lab
+        return_content: yes
+        status_code: 200
+...
