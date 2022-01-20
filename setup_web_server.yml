@@ -5,6 +5,6 @@
   hosts: web
   tasks:
 
-    - name: Install httpd - test
+    - name: Install httpd
       yum:
         name: httpd
