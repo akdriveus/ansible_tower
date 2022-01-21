@@ -14,9 +14,27 @@
         src: files/index.html
         dest: /var/www/html/index.html
 
+    - name: Create firewall rules
+        firewalld:
+          service: http
+          state: enabled
+          immediate: true
+          permanent: true
+
     - name: httpd is started
       service:
         name: httpd
         state: started
         enabled: true
+
+- name: Test connectivity to webserver
+  hosts: localhost
+  become: false
+  tasks:
+
+    - name: Connect to webserver
+      uri:
+        url: http://192.168.1.41
+        return_content: yes
+        status_code: 200
 ...
