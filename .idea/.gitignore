@@ -140,3 +140,8 @@ venv.bak/
 .idea/vcs.xml
 SoloLearn/.DS_Store
 /.idea/inspectionProfiles/profiles_settings.xml
+/inspectionProfiles/profiles_settings.xml
+/ansible_tower.iml
+/misc.xml
+/modules.xml
+/vcs.xml
