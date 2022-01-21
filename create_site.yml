@@ -15,11 +15,11 @@
         dest: /var/www/html/index.html
 
     - name: Create firewall rules
-        firewalld:
-          service: http
-          state: enabled
-          immediate: true
-          permanent: true
+      firewalld:
+        service: http
+        state: enabled
+        immediate: true
+        permanent: true
 
     - name: httpd is started
       service:
