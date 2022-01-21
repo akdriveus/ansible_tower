@@ -34,7 +34,7 @@
 
     - name: Connect to webserver
       uri:
-        url: http://rhel2.bah.lab
+        url: http://192.168.1.41
         return_content: yes
         status_code: 200
 ...
