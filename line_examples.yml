@@ -1,0 +1,25 @@
+## This playbook created a multiple line text file and a single line text file.
+
+---
+- name: Lines example
+  hosts: physical
+  tasks:
+
+    - name: multiple lines
+      copy:
+        content: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          In eu vehicula urna.
+          Phasellus nec dolor sit amet lectus imperdiet ornare.
+          Vestibulum elit leo, ullamcorper quis turpis sit amet, auctor consequat ligula.
+        dest: /var/tmp/multiple_lines
+
+    - name: one long line
+      copy:
+        content: >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          In eu vehicula urna.
+          Phasellus nec dolor sit amet lectus imperdiet ornare.
+          Vestibulum elit leo, ullamcorper quis turpis sit amet, auctor consequat ligula.
+        dest: /var/tmp/single_line
+...
