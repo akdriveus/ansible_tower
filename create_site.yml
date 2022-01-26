@@ -1,4 +1,4 @@
-## This playbook installs Apache HTTPD and creates a simple web page
+# This playbook installs Apache HTTPD and creates a simple web page
 
 ---
 - name: Install and start Apache HTTPD

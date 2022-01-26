@@ -1,7 +1,6 @@
-## This playbook checks installed packages and checks status of sshd service
+# This playbook checks installed packages and checks status of sshd service
 
 ---
-
 - name: Basic operations
   hosts: all
   # gather_facts: false

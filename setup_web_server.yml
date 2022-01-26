@@ -1,4 +1,4 @@
-## This playbook will install HTTPD and test connection to the server.
+# This playbook will install HTTPD and test connection to the server.
 
 ---
 - name: Setup web server

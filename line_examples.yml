@@ -1,4 +1,4 @@
-## This playbook created a multiple line text file and a single line text file.
+# This playbook created a multiple line text file and a single line text file.
 
 ---
 - name: Lines example
