@@ -1,0 +1,48 @@
+# This playbook installs Apache HTTPD and creates a simple web page
+
+---
+- name: Install and start Apache HTTPD
+  hosts: web
+  tasks:
+    - name: latest version of httpd and firewalld installed
+      yum:
+        name:
+          - httpd
+          - firewalld
+        state: latest
+
+    - name: test html page is installed
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+
+    - name: firewalld enabled and running
+      service:
+        name: firewalld
+        enabled: yes
+        state: started
+
+    - name: firewalld permits access to httpd service
+      firewalld:
+        service: http
+        state: enabled
+        immediate: yes
+        permanent: yes
+
+    - name: httpd enabled and running
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+- name: Test connectivity to webserver
+  hosts: localhost
+  become: no
+  tasks:
+
+    - name: Connect to webserver
+      uri:
+        url: http://192.168.1.41
+        return_content: yes
+        status_code: 200
+...
