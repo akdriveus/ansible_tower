@@ -1,0 +1,19 @@
+## This playbook will update the /etc/hosts file
+
+---
+- name: /etc/hosts is up to date
+  hosts: physical
+  tasks:
+
+    - name: Add hosts to /etc/hosts file
+      blockinfile:
+        path: /etc/hosts
+        block: |
+          {{ item.ip }} {{ item.name }}
+        marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.name }}"
+      loop:
+        - { name: tower1, ip: 192.168.1.20 }
+        - { name: tower2, ip: 192.168.1.21 }
+        - { name: tower3, ip: 192.168.1.22 }
+        - { name: tower_db, ip: 192.168.1.23 }
+...
