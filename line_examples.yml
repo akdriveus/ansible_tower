@@ -3,7 +3,6 @@
 ---
 - name: Lines example
   hosts: physical
-  become: no
   tasks:
 
     - name: multiple lines
@@ -13,7 +12,7 @@
           In eu vehicula urna.
           Phasellus nec dolor sit amet lectus imperdiet ornare.
           Vestibulum elit leo, ullamcorper quis turpis sit amet, auctor consequat ligula.
-        dest: /tmp/multiple_lines
+        dest: /var/tmp/multiple_lines
 
     - name: one long line
       copy:
@@ -22,5 +21,5 @@
           In eu vehicula urna.
           Phasellus nec dolor sit amet lectus imperdiet ornare.
           Vestibulum elit leo, ullamcorper quis turpis sit amet, auctor consequat ligula.
-        dest: /tmp/single_line
+        dest: /var/tmp/single_line
 ...
