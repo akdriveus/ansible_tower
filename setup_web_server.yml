@@ -29,12 +29,12 @@
 
 - name: Test connectivity to webserver
   hosts: localhost
-  become: no
+  become: false
   tasks:
 
     - name: Connect to webserver
       uri:
         url: http://192.168.1.41
-        return_content: yes
+        return_content: true
         status_code: 200
 ...

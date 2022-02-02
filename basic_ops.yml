@@ -4,7 +4,7 @@
 - name: Basic operations
   hosts: all
   # gather_facts: false
-  become: yes
+  become: true
   tasks:
   
     - name: Classify hosts depending on their OS distro

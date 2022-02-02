@@ -37,7 +37,7 @@
 
 - name: Test connectivity to webserver
   hosts: localhost
-  become: no
+  become: false
   tasks:
 
     - name: Connect to webserver
