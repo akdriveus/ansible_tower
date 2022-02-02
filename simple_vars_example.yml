@@ -1,0 +1,19 @@
+# This playbook shows simple variables example
+
+---
+- name: Simple variable example
+  hosts: web
+  vars:
+    packages:
+      - nmap
+      - httpd
+      - php
+      - mod_php
+      - mod_ssl
+  tasks:
+
+    - name: Install software
+      yum:
+        name: "{{ packages }}"
+        state: present
+...

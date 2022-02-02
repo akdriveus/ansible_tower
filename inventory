@@ -24,7 +24,6 @@ localhost
 [tower]
 192.168.1.[20:23]
 
-
 [clients:children]
 thorvald
 mlrd
@@ -32,6 +31,3 @@ mlrd
 [web]
 192.168.1.40
 192.168.1.41
-
-[physical]
-192.168.1.60
