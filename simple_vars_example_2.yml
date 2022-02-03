@@ -1,9 +1,8 @@
-# This playbook shows simple variables example. Variables are taking from the web file in the group_vars dir.
+# This playbook shows simple variables example. Variables are taking from the web file in the host_vars dir.
 
 ---
 - name: Simple variable example
   hosts: web
-
   tasks:
 
     - name: Install software
