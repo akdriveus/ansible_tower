@@ -1,4 +1,9 @@
-# This playbook shows simple variables example. Variables are taking from the web file in the host_vars dir.
+# This playbook shows how
+# Result of this playbook:
+# Package "nmap" will be installed on all the hosts in the mlrd group.
+# Package "sysstat" will be installed on the .60 host only.
+# This is because hosts_var dir contains a file with the name of the specific host.
+# Package "tree" will be installed on the rest of the hosts specified in the inventory file.
 
 ---
 - name: Simple variable example
