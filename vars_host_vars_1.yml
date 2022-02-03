@@ -2,11 +2,11 @@
 
 ---
 - name: Simple variable example
-  hosts: web
+  hosts: all
   tasks:
 
     - name: Install software
-      yum:
+      apt:
         name: "{{ packages }}"
         state: present
 ...
