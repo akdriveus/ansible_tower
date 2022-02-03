@@ -6,7 +6,7 @@
   tasks:
 
     - name: Install software
-      yum:
+      apt:
         name: "{{ packages }}"
         state: present
 ...
