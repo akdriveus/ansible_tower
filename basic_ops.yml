@@ -43,7 +43,7 @@
         var: deb_packages
 
 - name: Check services status
-  hosts: all
+  hosts: deb
   tasks:
 
     - name: Make sure that ssh service is running

@@ -2,7 +2,7 @@
 
 ---
 - name: Simple variable example
-  hosts: all
+  hosts: deb
   tasks:
 
     - name: Install software
