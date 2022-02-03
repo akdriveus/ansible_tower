@@ -3,7 +3,6 @@
 ---
 - name: Simple variable example
   hosts: physical
-
   tasks:
 
     - name: Install software
