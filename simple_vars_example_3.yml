@@ -1,0 +1,12 @@
+# This playbook shows simple variables example. Variables are taking from the web file in the host_vars dir.
+
+---
+- name: Simple variable example
+  hosts: all
+  tasks:
+
+    - name: Install software
+      yum:
+        name: "{{ packages }}"
+        state: present
+...
