@@ -1,4 +1,7 @@
-# This playbook shows simple variables example
+# This playbook shows simple variables example.
+# Result of this playbook:
+# Packages specified in "vars" will be installed on the hosts form the rpm group.
+# All variables are specified inside the play.
 
 ---
 - name: Simple variable example

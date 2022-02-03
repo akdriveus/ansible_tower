@@ -1,4 +1,6 @@
-# This playbook shows simple variables example. Variables are taking from the web file in the host_vars dir.
+# This playbook targets only one host 192.168.1.60 which is specified in the inventory file.
+# Package "sysstat" will be installed on all the hosts in the that group.
+# File host_vars/192.168.1.60 contains value "sysstat" which variable "packages" will use during playbook execution.
 
 ---
 - name: Simple variable example

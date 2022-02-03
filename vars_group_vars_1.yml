@@ -1,4 +1,6 @@
-# This playbook shows simple variables example. Variables are taking from the web file in the host_vars dir.
+# This playbook targets hosts of the "mlrd" group specified in the inventory file.
+# Package "nmap" will be installed on all the hosts from that group.
+# File group_vars/mlrd contains value "nmap" which variable "packages" will use during playbook execution.
 
 ---
 - name: Simple variable example
