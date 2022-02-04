@@ -17,15 +17,16 @@
         uname: brubble
         fname: Barney
         lname: Rubble
-        home: /home/tcsh
+        home: /home/brubble
+        shell: /bin/tcsh
 
   tasks:
-    #- name: Create a user from an array where values are dot separated
-    #  user:
-    #    name: "{{ users.fflintstone.uname }}"
-    #    comment: "{{ users.fflintstone.fname }} {{ users.fflintstone.lname }}"
-    #    shell: "{{ users.fflintstone.shell }}"
-    #    state: present
+    - name: Create a user from an array where values are dot separated
+      user:
+        name: "{{ users.fflintstone.uname }}"
+        comment: "{{ users.fflintstone.fname }} {{ users.fflintstone.lname }}"
+        shell: "{{ users.fflintstone.shell }}"
+        state: present
 
     - name: Create a user from an array where values are in brackets
       user:
