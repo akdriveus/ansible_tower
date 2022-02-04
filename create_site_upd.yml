@@ -50,4 +50,8 @@
     - name: Show the content of the captured output
       debug:
         var: output
+
+    - name: Show the webserver content
+      debug:
+        var: output.content
 ...
