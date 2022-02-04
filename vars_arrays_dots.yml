@@ -27,10 +27,10 @@
         shell: "{{ users.fflintstone.shell }}"
         state: present
 
-    - name: Create a user from an array where values are in brackets
-      user:
-        name: "{{ users['brubble']['uname'] }}"
-        comment: "{{ users['brubble']['fname'] }} {{ users['brubble']['lname'] }}"
-        shell: "{{ users['brubble'] ['shell'] }}"
-        state: present
+    #- name: Create a user from an array where values are in brackets
+    #  user:
+    #    name: "{{ users['brubble']['uname'] }}"
+    #    comment: "{{ users['brubble']['fname'] }} {{ users['brubble']['lname'] }}"
+    #    shell: "{{ users['brubble'] ['shell'] }}"
+    #    state: present
 ...
