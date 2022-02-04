@@ -49,9 +49,9 @@
 
     - name: Show the content of the captured output
       debug:
-        var: output
+        var: output  # This creates dictionary "output". The dictionary contains key-value pairs which can be used to display specific information...
 
     - name: Show the webserver content
       debug:
-        var: output.content
+        var: output.content  # For example, the contents of the index.html page which this playbook created.
 ...
