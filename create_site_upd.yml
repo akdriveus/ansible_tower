@@ -45,4 +45,9 @@
         url: http://192.168.1.41
         return_content: true
         status_code: 200
+      register: output
+
+    - name: Show the content of the captured output
+      debug:
+        var: output
 ...

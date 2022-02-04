@@ -1,4 +1,6 @@
-# This playbook shows how to use
+# This playbook shows how to use arrays.
+# In the first task values are separated by dots.
+# In the second task values are separated by brackets.
 
 ---
 - name: Array example with dots
