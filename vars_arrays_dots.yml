@@ -1,0 +1,37 @@
+# This playbook shows how to use
+
+---
+- name: Array example with dots
+  hosts: physical
+  vars:
+
+    users:
+      fflintstone:
+        uname: fred
+        fname: Fred
+        lname: Flintstone
+        home: /home/fflintstone
+        shell: /bin/zsh
+
+      brubble:
+        uname: brubble
+        fname: Barney
+        lname: Rubble
+        home: /home/tcsh
+
+      tasks:
+
+        - name: Create a user from an array where values are dot separated
+          user:
+            name: "{{ users.fflintstone.uname }}"
+            comment: "{{ users.fflintstone.fname }} {{ users.fflintstone.lname }}"
+            shell: "{{ users.fflintstone.shell }}"
+            state: present
+
+        - name: Create a user from an array where values are in brackets
+          user:
+            name: "{{ users['brubble']['uname'] }}"
+            comment: "{{ users['brubble']['fname'] }} {{ users['brubble']['lname'] }}"
+            shell: "{{ users['brubble'] ['shell'] }}"
+            state: present
+...
