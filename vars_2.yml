@@ -3,9 +3,11 @@
 # - hosts in the mlrd group. In the group_vars directory there is a file called "mlrd". It has the same name as the
 # group of hosts defined in the inventory file - [mlrd]. So the file group_vars/mlrd contains values for variables defined
 # for the group of hosts "mlrd".
+# A variable that is set to affect the all host group will be overridden by a variable that has the same name and is set to affect specific group of hosts.
 # In this particular case, the package "nmap" will be installed on the mlrd hosts.
 # - host 192.168.1.60. In the host_vars directory there is a file called "192.168.1.60". It has the same name as the host 192.168.1.60
 # which is defined in the inventory file. So the file host_vars/192.168.1.60 contains values for variables defined for the host 192.168.1.60.
+# A variable that is set to affect the all host group will be overridden by a variable that has the same name and is set to affect a single host.
 # In this particular case, the package "sysstat" will be installed on the .60 host.
 
 ---
