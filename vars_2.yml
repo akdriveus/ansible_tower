@@ -10,7 +10,7 @@
 # A variable that is set to affect the all host group will be overridden by a variable that has the same name and is set to affect a single host.
 # In this particular case, the package "sysstat" will be installed on the .60 host.
 
-# One recommended practice is to choose globally unique variable names so you do not have to consider precedence rules.
+# One recommended practice is to choose globally unique variable names, so you do not have to consider precedence rules.
 # However, sometimes you might want to use precedence to cause different hosts or host groups to get different settings than your defaults.
 
 ---
