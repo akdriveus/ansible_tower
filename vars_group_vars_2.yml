@@ -1,0 +1,15 @@
+# This playbook will be executed against the children hosts of the group "clients" specified in the Inventory file.
+# User "twradmin" will be created on all the hosts of that group.
+# File group_vars/clients contains value "twradmin" which variable "user" will use for the playbook execution.
+
+---
+- name: Manage clients hosts
+  hosts: clients
+  tasks:
+
+    - name: Create user twradmin
+      user:
+        name: "{{ user }}"
+        shell: /bin/bash
+        state: present
+...
