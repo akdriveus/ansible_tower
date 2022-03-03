@@ -44,9 +44,9 @@
         state: latest
 
     - name: Check whether package samba is installed
-        debug:
-          msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
-        when: "'samba' in ansible_facts.packages"
+      debug:
+        msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
+      when: "'samba' in ansible_facts.packages"
 
     - name: Upgrade all packages to the latest version
       apt:
