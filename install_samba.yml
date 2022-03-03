@@ -7,18 +7,41 @@
   become: true
   tasks:
 
-    - name: Gather the package facts
-      package_facts:
-        manager: auto
+    - name: Classify hosts depending on their OS distro
+      group_by:
+        key: os_{{ ansible_facts['distribution'] }}
+      register: os_distro
 
-    - name: Print the package facts
+    - name: List OS distributions
       debug:
-        var: ansible_facts.packages
+        var: os_distro
+
+#    - name: Gather the package facts
+#      package_facts:
+#        manager: auto
+#
+#    - name: Print the package facts
+#      debug:
+#        var: ansible_facts.packages
+
+
+- name: Operations with APT
+  hosts: os_Ubuntu
+  tasks:
 
     - name: Check whether package samba is installed
       debug:
         msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
       when: "'samba' in ansible_facts.packages"
+
+    - name: Get a list of installed DEB packages
+      package_facts:
+        manager: apt
+      register: deb_packages
+
+    - name: Print insstalled DEB packages
+      debug:
+        var: deb_packages
 
     - name: Install latest samba
       apt:
@@ -34,4 +57,19 @@
       reboot:
         reboot_timeout: 300
         test_command: uptime
+
+
+- name: Operations with YUM
+  hosts: os_RedHat
+  tasks:
+
+    - name: Get a list of installed RPM packages
+      yum:
+        list: installed
+      register: rmp_packages
+
+    - name: Print installed RPM packages
+      debug:
+        var: rpm_packages
+
 ...
