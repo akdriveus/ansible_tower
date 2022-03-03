@@ -1,0 +1,37 @@
+# This playbook checks current version of samba and upgrades samba to the latest version.
+
+---
+- name: Check samba version and upgrade samba
+  hosts: samba
+  gather_facts: true
+  become: true
+  tasks:
+
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+
+    - name: Print the package facts
+      debug:
+        var: ansible_facts.packages
+
+    - name: Check whether package samba is installed
+      debug:
+        msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
+      when: "'samba' in ansible_facts.packages"
+
+    - name: Install latest samba
+      apt:
+        name: samba
+        state: latest
+
+    - name: Upgrade all packages to the latest version
+      apt:
+        name: "*"
+        state: latest
+
+    - name: Reboot
+      reboot:
+        reboot_timeout: 300
+        test_command: uptime
+...
