@@ -29,11 +29,6 @@
   hosts: os_Ubuntu
   tasks:
 
-    - name: Check whether package samba is installed
-      debug:
-        msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
-      when: "'samba' in ansible_facts.packages"
-
     - name: Get a list of installed DEB packages
       package_facts:
         manager: apt
@@ -47,6 +42,11 @@
       apt:
         name: samba
         state: latest
+
+    - name: Check whether package samba is installed
+        debug:
+          msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
+        when: "'samba' in ansible_facts.packages"
 
     - name: Upgrade all packages to the latest version
       apt:
