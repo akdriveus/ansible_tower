@@ -10,9 +10,9 @@
         key: os_{{ ansible_facts['distribution'] }}
       register: os_distro
 
-    - name: List OS distribution
-      debug:
-        var: os_distro
+#    - name: List OS distribution
+#      debug:
+#        var: os_distro
 
 - name: Patch APT servers
   hosts: os_Ubuntu
