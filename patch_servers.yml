@@ -1,0 +1,15 @@
+# This playbook will install the latest updates based on package manager.
+
+- name: Gather information about hosts
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Classify hosts depending on their OS distro
+      group_by:
+        key: os_{{ ansible_facts['distribution'] }}
+      register: os_distro
+
+    - name: List OS distribution
+      debug:
+        var: os_distro
