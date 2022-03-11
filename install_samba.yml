@@ -42,11 +42,15 @@
       apt:
         name: samba
         state: latest
+      register: install_result
 
-    - name: Check whether package samba is installed
-      debug:
-        msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
-      when: "'samba' in ansible_facts.packages"
+    - debug:
+        var: install_result
+
+#    - name: Check whether package samba is installed
+#      debug:
+#        msg: "{{ ansible_facts.packages['samba'] | length }} version(s) installed!"
+#      when: "'samba' in ansible_facts.packages"
 
     - name: Upgrade all packages to the latest version
       apt:
@@ -55,7 +59,7 @@
 
     - name: Reboot
       reboot:
-        reboot_timeout: 300
+        reboot_timeout: 180
         test_command: uptime
 
 
