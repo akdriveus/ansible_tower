@@ -13,3 +13,18 @@
     - name: List OS distribution
       debug:
         var: os_distro
+
+- name: Patch APT servers
+  hosts: os_Ubuntu
+  tasks:
+
+    - name: Upgrade all packages to the latest version
+      apt:
+        update_cache: true
+        name: "*"
+        state: latest
+      register: apt_upgrade_result
+
+    - name: List upgraded packages
+      debug:
+        var: apt_upgrade_result
