@@ -18,13 +18,14 @@
   hosts: os_Ubuntu
   tasks:
 
-    - name: Upgrade all packages to the latest version
+    - name: Update cache and upgrage all packages
+      register: updatesys
       apt:
-        update_cache: true
         name: "*"
         state: latest
-      register: apt_upgrade_result
+        update_cache: true
 
-    - name: List upgraded packages
+
+    - name: Display the upgrade stats
       debug:
-        var: apt_upgrade_result
+        var: "{{ updatesys.stdout_lines | last }}"
