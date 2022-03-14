@@ -28,4 +28,5 @@
 
     - name: Display the upgrade stats
       debug:
-        var: "{{ updatesys.stdout_lines | last }}"
+        msg: "{{ updatesys.stdout_lines | last }}"
+...
