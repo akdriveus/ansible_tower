@@ -25,11 +25,16 @@
         state: latest
         update_cache: true
 
-    - name: Show the content of capturedi in updatesys
-      debug:
-        var: updatesys
+#    - name: Show the content of capturedi in updatesys
+#      debug:
+#        var: updatesys
 
-    - name: Display the upgrade stats
-      debug:
-        msg: "{{ updatesys.stdout_lines | *upgraded* }}"
+#    - name: Display the upgrade stats
+#      debug:
+#        msg: "{{ updatesys.stdout_lines | last }}"
+
+    - name: Reboot
+      reboot:
+        reboot_timeout: 180
+        test_command: uptime
 ...
