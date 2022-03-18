@@ -29,7 +29,7 @@
       debug:
         var: updatesys
 
-#   - name: Display the upgrade stats
-#      debug:
-#        msg: "{{updatesys.stdout_lines|last}}"
+   - name: Display the upgrade stats
+      debug:
+        msg: "{{ updatesys.stdout_lines | last }}"
 ...
