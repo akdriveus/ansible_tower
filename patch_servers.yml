@@ -31,5 +31,5 @@
 
     - name: Display the upgrade stats
       debug:
-        msg: "{{ updatesys.stdout_lines | last }}"
+        msg: "{{ updatesys.stdout_lines | *upgraded* }}"
 ...
