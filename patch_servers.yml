@@ -37,7 +37,7 @@
       reboot:
         reboot_timeout: 180
         test_command: uptime
-        register: uptime_output
+      register: uptime_output
 
     - name: Show uptime output
       debug:
