@@ -41,5 +41,5 @@
 
     - name: Show uptime output
       debug:
-        var: uptime_output.stdout_lines
+        var: uptime_output
 ...
