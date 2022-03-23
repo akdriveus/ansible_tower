@@ -50,7 +50,7 @@
   tasks:
     - name: Ensure the webserver is reachable
       uri:
-        url: http://192.168.1.41
+        url: http://192.168.1.40
         return_content: true
         status_code: 200
       register: output
