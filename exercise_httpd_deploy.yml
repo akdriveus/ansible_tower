@@ -47,6 +47,7 @@
 - name: Verify the Apache service
   hosts: localhost
   become: false
+
   tasks:
     - name: Ensure the webserver is reachable
       uri:
