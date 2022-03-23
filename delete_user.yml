@@ -1,0 +1,13 @@
+# Use this playbook to delete users on the remote servers.
+
+---
+- name: Delete users
+  hosts: 192.168.1.60
+
+  tasks:
+    - name: Delete User
+      user:
+        name: "{{ username }}"
+        state: present
+        remove: yes
+...
