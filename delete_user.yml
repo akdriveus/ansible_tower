@@ -2,7 +2,7 @@
 
 ---
 - name: Delete users
-  hosts: all
+  hosts: physical
 
   tasks:
     - name: Delete User
