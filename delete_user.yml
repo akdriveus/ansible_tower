@@ -8,6 +8,6 @@
     - name: Delete User
       user:
         name: "{{ username }}"
-        state: present
+        state: absent
         remove: yes
 ...
