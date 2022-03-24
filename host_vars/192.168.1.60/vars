@@ -4,4 +4,6 @@ packages:
 
 username:
   - fred
+
+password: secret
 ...
