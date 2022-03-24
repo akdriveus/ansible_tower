@@ -2,5 +2,6 @@
 packages:
   - sysstat
 
-username: fred
+username:
+  - fred
 ...
