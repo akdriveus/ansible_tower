@@ -2,12 +2,12 @@
 
 ---
 - name: Display some basic facts
-  hosts: 192.168.1.45
+  hosts: mlrd
   tasks:
 
-    - name: Show properties of MLRD
+    - name: Show properties of "{{ inventory_hostname }}"
       debug:
-        msg: >
-          My FQDN is {{ ansible_facts['fqdn'] }}
-          and my default IP address is {{ ansible_facts['default_ipf4']['address'] }}
+        msg: > 
+        My FQDN is "{{ ansible_facts['fqdn'] }}" 
+        and my default IP address is "{{ ansible_facts['default_ipf4']['address'] }}"
 ...
