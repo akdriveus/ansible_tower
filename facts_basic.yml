@@ -2,7 +2,7 @@
 
 ---
 - name: Display some basic facts
-  hosts: 192.168.1.45
+  hosts: mlrd
   tasks:
 
     - name: "{{ inventory_hostname }}"
