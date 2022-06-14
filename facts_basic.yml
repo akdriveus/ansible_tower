@@ -7,5 +7,5 @@
 
     - name: "Properties of {{ inventory_hostname }}"
       debug:
-        msg: "{{ ansible_facts['fqdn'] }}"
+        msg: "My FQDN is {{ ansible_facts['fqdn'] }} and my default IP address is: {{ ansible_facts['default_ipv4']['address'] }}"
 ...
