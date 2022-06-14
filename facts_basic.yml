@@ -5,9 +5,7 @@
   hosts: mlrd
   tasks:
 
-    - name: Show properties of "{{ inventory_hostname }}"
-      debug:
-        msg: > 
-        My FQDN is "{{ ansible_facts['fqdn'] }}" 
-        and my default IP address is "{{ ansible_facts['default_ipf4']['address'] }}"
+    - name: "Show properties of {{ inventory_hostname }}"
+      ansible.builtin.debug:
+        msg: "My fqdn is {{ ansible_facts['fqdn'] }} and my default IP address is {{ ansible_facts['default_ipf4']['address'] }}"
 ...
