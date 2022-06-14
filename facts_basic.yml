@@ -1,0 +1,13 @@
+# This playbook gathers facts of remote host(s) and displays some properties.
+
+---
+- name: Display some basic facts
+  hosts: mlrd
+  tasks:
+
+    - name: Show properties of {{ inventory_hostname }}
+      debug:
+        msg: >
+          My FQDN is {{ ansible_facts['fqdn'] }}
+          and my default IP address is {{ ansible_facts['default_ipf4']['address'] }}
+...
