@@ -2,10 +2,10 @@
 
 ---
 - name: Display some basic facts
-  hosts: mlrd
+  hosts: 192.168.1.45
   tasks:
 
     - name: "Show properties of {{ inventory_hostname }}"
-      ansible.builtin.debug:
+      debug:
         msg: "My fqdn is {{ ansible_facts['fqdn'] }} and my default IP address is {{ ansible_facts['default_ipf4']['address'] }}"
 ...
