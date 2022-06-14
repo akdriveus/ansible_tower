@@ -7,5 +7,5 @@
 
     - name: "{{ inventory_hostname }}"
       debug:
-        msg: "{{ ansible_facts['fqdn'] }}"
+        msg: 'System:' "{{ ansible_facts['fqdn'] }}"
 ...
