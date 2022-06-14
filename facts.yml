@@ -1,0 +1,16 @@
+# This playbook is gathering facts of a host.
+
+---
+- name: Fact dump
+  hosts: 192.168.1.45
+  tasks:
+
+    - name: Print all facts
+      debug:
+        var: ansible_facts
+
+    - name: Copy output to a file
+      copy:
+        content: ansible_facts
+        dest: "/tmp/output-{{ inventory_hostname }}.txt"
+...
