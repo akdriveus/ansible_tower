@@ -2,7 +2,7 @@
 
 ---
 - name: Display some basic facts
-  hosts: mlrd
+  hosts: 192.168.1.45
   tasks:
 
     - name: Show properties of MLRD
