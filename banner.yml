@@ -16,4 +16,4 @@
 
     - name: Display contents of issue.net file
       debug:
-        var: file_contents
+        var: file_contents.stdout_lines
