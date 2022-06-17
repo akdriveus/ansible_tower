@@ -17,3 +17,15 @@
     - name: Display contents of issue.net file
       debug:
         var: file_contents.stdout_lines
+
+    - name: Edit sshd_config file
+      replace:
+        path: /etc/ssh/sshd_config
+        regexp: '^.Banner'
+        replace: '^Banner issue.net'
+
+    - name: Restart sshd service
+      service:
+        name: sshd
+        state: restarted
+...
