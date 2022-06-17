@@ -22,7 +22,7 @@
       replace:
         path: /etc/ssh/sshd_config
         regexp: '^.Banner none'
-        replace: 'Banner issue.net'
+        replace: 'Banner /etc/issue.net'
 
     - name: Restart sshd service
       service:
