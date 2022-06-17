@@ -1,0 +1,19 @@
+# This playbook will add a banner
+
+---
+- name: Create a banner
+  hosts: "{{ target }}"
+  tasks:
+
+    - name: Add banner text to issue.net file
+      copy:
+        src: files/banner
+        dest: /etc/issue.net
+
+    - name: Get contents of issue.net file
+      command: cat /etc/issue.net
+      register: file_contents
+
+    - name: Display contents of issue.net file
+      debug:
+        msg: "{{ file_contents.stdout }}"
