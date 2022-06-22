@@ -2,7 +2,7 @@
 
 ---
 - name: Display some basic facts
-  hosts: thorvald
+  hosts: mlrd
   tasks:
 
     - name: "Properties of {{ inventory_hostname }}"
