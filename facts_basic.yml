@@ -13,6 +13,7 @@
         - "My list of DNS servers is {{ ansible_facts.dns.nameservers }}"
         - "System's OS distro is {{ ansible_facts.distribution }}"
         - "System's domain is {{ ansible_facts.domain }}"
+        - - "System's NIC status {{ ansible_facts.eth0.active }}"
         # There are two syntaxes that can be used to retrieve the value:
         # ansible_facts['default_ipv4']['address'] can also be written ansible_facts.default_ipv4.address
         # ansible_facts['dns']['nameservers'] can also be written ansible_facts.dns.nameservers
