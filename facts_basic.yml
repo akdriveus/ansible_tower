@@ -12,6 +12,7 @@
         - "My Inventory Hostname is {{ inventory_hostname }}"
         - "My list of DNS servers is {{ ansible_facts.dns.nameservers }}"
         - "System's OS distro is {{ ansible_facts.distribution }}"
+        - "System's OS distro major version is {{ ansible_facts.distribution_major_version }}"
         - "System's domain is {{ ansible_facts.domain }}"
         - "System's Time Zone is {{ ansible_facts.date_time.tz }}"
 
