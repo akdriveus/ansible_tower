@@ -10,4 +10,8 @@
         msg:
         - "My FQDN is {{ ansible_facts['fqdn'] }} and my default IP address is: {{ ansible_facts['default_ipv4']['address'] }}"
         - "My Inventory Hostname is {{ inventory_hostname }}"
+        - "My list of DNS servers is {{ ansible_facts.dns.nameservers }}"
+        # There are two syntaxes that can be used to retrieve the value:
+        # ansible_facts['default_ipv4']['address'] can also be written ansible_facts.default_ipv4.address
+        # ansible_facts['dns']['nameservers'] can also be written ansible_facts.dns.nameservers
 ...
