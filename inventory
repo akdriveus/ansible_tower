@@ -1,41 +1,42 @@
 localhost
 
 [rpm]
-192.168.1.40
-192.168.1.41
-192.168.1.42
-192.168.1.45
+node1r8 ansible_host=192.168.1.40
+node2r8 ansible_host=192.168.1.41
+node3r8 ansible_host=192.168.1.42
+node6r9 ansible_host=192.168.1.45
 
 [deb]
-192.168.1.43
-192.168.1.44
-192.168.1.60
+node4u18 ansible_host=192.168.1.43
+node5u20 ansible_host=192.168.1.44
+thor-test ansible_host=192.168.1.60
 
 [physical]
-192.168.1.60
+thor-test ansible_host=192.168.1.60
 
 [thorvald]
-192.168.1.40
-192.168.1.41
-192.168.1.60
+node1r8 ansible_host=192.168.1.40
+node2r8 ansible_host=192.168.1.41
+thor-test ansible_host=192.168.1.60
 
 [mlrd]
-192.168.1.42
-192.168.1.43
-192.168.1.44
-192.168.1.45
+node3r8 ansible_host=192.168.1.42
+node4u18 ansible_host=192.168.1.43
+node5u20 ansible_host=192.168.1.44
+node6r9 ansible_host=192.168.1.45
+thor-test ansible_host=192.168.1.60
 
 [tower_cluster]
 192.168.1.[20:23]
 
 [tower_lab]
-192.168.1.40
-192.168.1.41
-192.168.1.42
-192.168.1.43
-192.168.1.44
-192.168.1.45
-192.168.1.60
+node1r8 ansible_host=192.168.1.40
+node2r8 ansible_host=192.168.1.41
+node3r8 ansible_host=192.168.1.42
+node4u18 ansible_host=192.168.1.43
+node5u20 ansible_host=192.168.1.44
+node6r9 ansible_host=192.168.1.45
+thor-test ansible_host=192.168.1.60
 #=================================
 
 
