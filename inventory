@@ -45,12 +45,8 @@ thorvald
 mlrd
 
 [web]
-192.168.1.40
-192.168.1.41
-
-[samba]
-192.168.1.40
-192.168.1.60
+node1r8 ansible_host=192.168.1.40
+node2r8 ansible_host=192.168.1.41
 
 [banner]
 node1r8 ansible_host=192.168.1.40
